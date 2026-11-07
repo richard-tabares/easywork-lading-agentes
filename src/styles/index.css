@@ -1,0 +1,148 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/montserrat-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../assets/fonts/montserrat-700.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/poppins-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/poppins-400-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/poppins-500.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/poppins-500-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/poppins-600.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/poppins-600-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@theme {
+  --color-brand: #262261;
+  --color-brand-hover: #3d3896;
+  --color-ink: #58595b;
+  --color-ink-strong: #3e3f41;
+  --color-ink-chat: #2d2e30;
+  --color-surface: #f4f4f6;
+  --color-soft: #fafafc;
+  --color-line: #ececf1;
+  --color-line-soft: #e6e6ee;
+  --color-lilac-50: #eeedf7;
+  --color-lilac-100: #e4e3f0;
+  --color-lilac-200: #d6d5ec;
+  --color-lilac-300: #c9c8e3;
+  --color-lilac-400: #8f8cc4;
+  --color-field: #d9d9e3;
+  --color-placeholder: #8a8b8e;
+  --color-muted: #9a9b9e;
+  --color-footer-muted: #b3b2d4;
+  --color-disabled: #a8a7c7;
+  --color-ghost-hover: #f0f0f7;
+  --color-white-hover: #e9e8f5;
+  --color-highlight: #fff2c2;
+  --color-success: #1f6b45;
+  --color-success-bg: #e3f4ea;
+  --color-success-strong: #2f855a;
+  --color-warning: #7a5410;
+  --color-warning-bg: #fdf1d6;
+  --color-warning-strong: #d69e2e;
+  --color-danger: #9b2c22;
+  --color-danger-bg: #fbe7e5;
+  --color-danger-strong: #c0392b;
+  --color-whatsapp-bg: #e7f6e9;
+  --color-chat-bg: #12112b;
+  --color-chat-panel: #1c1b45;
+  --color-chat-bubble: #2a2857;
+  --color-chat-accent: #3d3896;
+  --color-chat-border: #3d3a7a;
+  --color-chat-green: #8ee0b5;
+  --color-chat-muted: #a9a8d0;
+  --color-chat-text: #ecebf7;
+  --color-dot-red: #f07167;
+  --color-dot-amber: #f6c453;
+  --font-sans: Poppins, system-ui, sans-serif;
+  --font-heading: 'Nexa Bold', Nexa, Montserrat, sans-serif;
+  --font-montserrat: Montserrat, sans-serif;
+}
+
+@utility bg-ew-pattern {
+  background-color: var(--color-brand);
+  background-image: url('../assets/pattern.png');
+  background-size: 132px auto;
+  background-repeat: repeat;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    background: #ffffff;
+  }
+
+  a {
+    color: var(--color-brand);
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: var(--color-brand-hover);
+  }
+
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+}
