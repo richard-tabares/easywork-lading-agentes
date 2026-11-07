@@ -5,19 +5,16 @@ import { fadeUp, revealViewport, staggerContainer } from '../../../lib/motion'
 const items = [
   {
     icon: Mic,
-    tone: 'brand',
     title: 'IA conversacional real',
     text: 'Todos dicen tener IA. Aquí puedes escribirle o hablarle a tu asistente en WhatsApp y él actúa.',
   },
   {
     icon: Smartphone,
-    tone: 'ink',
     title: 'WhatsApp-first',
     text: 'El agente mexicano vive en WhatsApp. Nosotros también. Sin apps nuevas, sin logins extras, sin aprender nada.',
   },
   {
     icon: CreditCard,
-    tone: 'brand',
     title: 'Precio justo',
     text: 'Desde USD 27/mes. El competidor más conocido cobra ~USD 40/mes por una interfaz de los 90s. Sin automatizaciones básicas. Sin permanencia.',
   },
@@ -50,13 +47,9 @@ export default function Differentiators() {
               <m.div
                 key={item.title}
                 variants={fadeUp}
-                className="flex flex-col gap-3.5 rounded-2xl border border-line bg-soft p-8"
+                className="flex flex-col gap-3.5 rounded-2xl border border-line bg-soft p-8 transition-colors duration-200 hover:border-brand"
               >
-                <div
-                  className={`flex h-13 w-13 items-center justify-center rounded-2xl ${
-                    item.tone === 'brand' ? 'bg-brand' : 'bg-ink'
-                  }`}
-                >
+                <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-brand">
                   <Icon size={26} strokeWidth={2} className="text-white" aria-hidden="true" />
                 </div>
                 <h3 className="font-heading text-xl font-extrabold text-brand">{item.title}</h3>

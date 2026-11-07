@@ -7,21 +7,18 @@ const steps = [
   {
     number: '01',
     icon: FileUp,
-    tone: 'brand',
     title: 'Sube tus pólizas',
     text: 'Arrastra el PDF o una foto. La IA identifica contratante, vigencia, RFC, forma de pago y cobertura, y crea al cliente con su carpeta digital. ¿Tienes Excel? Lo importamos completo.',
   },
   {
     number: '02',
     icon: Link2,
-    tone: 'ink',
     title: 'Conecta correo y WhatsApp',
     text: 'Gmail u Office 365 en un clic. WhatsApp Business se integra en tu plan, sin contratar conectores por fuera.',
   },
   {
     number: '03',
     icon: Bell,
-    tone: 'brand',
     title: 'Easywork da seguimiento',
     text: 'Recordatorios de cobro automáticos, tareas con fecha y renovaciones a la vista. Tú solo atiendes lo que necesita tu atención.',
   },
@@ -53,14 +50,10 @@ export default function Steps() {
               <m.div
                 key={step.number}
                 variants={fadeUp}
-                className="flex flex-col gap-4 rounded-2xl border border-line p-8"
+                className="flex flex-col gap-4 rounded-2xl border border-line p-8 transition-colors duration-200 hover:border-brand"
               >
                 <div className="flex items-center justify-between">
-                  <div
-                    className={`flex h-13 w-13 items-center justify-center rounded-2xl ${
-                      step.tone === 'brand' ? 'bg-brand' : 'bg-ink'
-                    }`}
-                  >
+                  <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-brand">
                     <Icon size={26} strokeWidth={2} className="text-white" aria-hidden="true" />
                   </div>
                   <span className="font-montserrat text-4xl font-extrabold text-lilac-100">

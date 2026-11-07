@@ -74,8 +74,14 @@ function AnimatedPrice({ value }) {
 
 export default function Pricing() {
   const [billing, setBilling] = useState('m')
+  const [selectedPlan, setSelectedPlan] = useState('basic')
   const basic = getLandingPricing(27, billing)
   const core = getLandingPricing(57, billing)
+
+  const cardClass = (planId) =>
+    `relative flex cursor-pointer flex-col gap-4.5 rounded-3xl border-2 px-7 pb-7 pt-9 transition-[border-color,box-shadow] duration-200 hover:z-10 ${
+      selectedPlan === planId ? 'border-brand shadow-xl' : 'border-lilac-300 hover:border-brand'
+    }`
 
   return (
     <section id="precios" className="bg-white px-6 py-24">
@@ -110,7 +116,12 @@ export default function Pricing() {
         </div>
 
         <div className="grid w-full items-stretch gap-6 lg:grid-cols-3">
-          <div className="relative flex flex-col gap-4.5 rounded-3xl border-2 border-lilac-300 px-7 pb-7 pt-9">
+          <m.div
+            onClick={() => setSelectedPlan('trial')}
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+            className={cardClass('trial')}
+          >
             <span className="text-sm font-semibold tracking-widest text-ink">PRUEBA GRATIS</span>
             <div className="flex items-baseline gap-2">
               <span className="font-montserrat text-5xl font-extrabold leading-none text-brand">
@@ -133,9 +144,14 @@ export default function Pricing() {
               Crear cuenta gratis
             </ButtonLink>
             <span className="text-center text-sm">Sin tarjeta · Sin permanencia</span>
-          </div>
+          </m.div>
 
-          <div className="relative flex flex-col gap-4.5 rounded-3xl border-2 border-brand px-7 pb-7 pt-9 shadow-xl">
+          <m.div
+            onClick={() => setSelectedPlan('basic')}
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+            className={cardClass('basic')}
+          >
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand px-3.5 py-1.5 text-xs font-semibold tracking-wide text-white">
               MÁS POPULAR
             </span>
@@ -156,9 +172,14 @@ export default function Pricing() {
               Empezar con Basic
             </ButtonLink>
             <span className="text-center text-sm">Cancela cuando quieras</span>
-          </div>
+          </m.div>
 
-          <div className="relative flex flex-col gap-4.5 rounded-3xl border-2 border-lilac-300 px-7 pb-7 pt-9">
+          <m.div
+            onClick={() => setSelectedPlan('core')}
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+            className={cardClass('core')}
+          >
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-ink px-3.5 py-1.5 text-xs font-semibold tracking-wide text-white">
               CON WHATSAPP
             </span>
@@ -180,7 +201,7 @@ export default function Pricing() {
             <ButtonLink variant="ghost" to="/checkout/core" className="mt-auto min-h-13 text-base">
               Empezar con Core
             </ButtonLink>
-          </div>
+          </m.div>
         </div>
 
         <p className="text-center text-base font-medium text-brand">

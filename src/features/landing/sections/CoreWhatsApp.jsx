@@ -8,7 +8,12 @@ import { fadeUp, revealViewport, staggerContainer } from '../../../lib/motion'
 
 function PhoneCard({ title, children }) {
   return (
-    <m.div variants={fadeUp} className="flex flex-col gap-3">
+    <m.div
+      variants={fadeUp}
+      whileHover={{ scale: 1.03 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+      className="flex flex-col gap-3"
+    >
       <h3 className="text-center text-sm font-semibold text-white">{title}</h3>
       <div className="flex flex-col gap-2 rounded-3xl border border-chat-border bg-chat-bg p-2.5">
         <div className="flex items-center gap-2.5 px-2 py-1.5">
@@ -20,7 +25,7 @@ function PhoneCard({ title, children }) {
             <span className="text-xs text-chat-green">en línea</span>
           </span>
         </div>
-        <div className="flex min-h-75 flex-col gap-2 rounded-2xl bg-chat-panel p-3 text-xs leading-relaxed">
+        <div className="flex h-75 flex-col gap-2 overflow-y-auto overscroll-contain rounded-2xl bg-chat-panel p-3 text-xs leading-relaxed [scrollbar-color:var(--color-chat-border)_transparent] [scrollbar-width:thin]">
           {children}
         </div>
       </div>

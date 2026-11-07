@@ -53,7 +53,7 @@ export default function Faq() {
                   <span>{faq.q}</span>
                   <span
                     aria-hidden="true"
-                    className="flex h-7.5 w-7.5 flex-none items-center justify-center rounded-lg bg-ink text-lg leading-none text-white"
+                    className="flex h-7.5 w-7.5 flex-none items-center justify-center rounded-lg bg-brand text-lg leading-none text-white"
                   >
                     {isOpen ? '−' : '+'}
                   </span>
