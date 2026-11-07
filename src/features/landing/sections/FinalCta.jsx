@@ -1,13 +1,16 @@
-import ButtonLink from '../../../components/ui/ButtonLink'
 import logo from '../../../assets/logo.png'
+import finalCtaBackdrop from '../../../assets/backdrops/final-cta-agent.webp'
+import ButtonLink from '../../../components/ui/ButtonLink'
+import PhotoBackdrop from '../../../components/ui/PhotoBackdrop'
 
 export default function FinalCta() {
   return (
     <section className="flex flex-wrap overflow-hidden bg-white">
       <div className="relative min-h-105 min-w-0 grow basis-full lg:basis-2/3">
-        <div
-          aria-hidden="true"
-          className="bg-ew-pattern absolute -bottom-10 -top-10 left-0 right-7.5 rounded-r-full"
+        <PhotoBackdrop
+          src={finalCtaBackdrop}
+          className="absolute -bottom-10 -top-10 left-0 right-7.5 rounded-r-full"
+          overlayClassName="bg-linear-to-r from-brand/90 via-brand/80 to-brand/60"
         />
         <div
           aria-hidden="true"
@@ -43,10 +46,6 @@ export default function FinalCta() {
       </div>
 
       <div className="relative flex min-w-0 grow basis-full items-center justify-center px-6 py-12 lg:basis-1/3">
-        <div
-          aria-hidden="true"
-          className="absolute -left-8 bottom-6 top-6 w-4 rounded-r-full border-r-8 border-ink"
-        />
         <img
           src={logo}
           alt="Easywork · All in one"

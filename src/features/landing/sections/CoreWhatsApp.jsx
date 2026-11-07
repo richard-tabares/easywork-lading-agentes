@@ -1,7 +1,9 @@
 import { m } from 'motion/react'
 import { Mic } from 'lucide-react'
 import icon from '../../../assets/icon.png'
+import coreWhatsAppBackdrop from '../../../assets/backdrops/core-whatsapp-agent.webp'
 import ButtonLink from '../../../components/ui/ButtonLink'
+import PhotoBackdrop from '../../../components/ui/PhotoBackdrop'
 import { fadeUp, revealViewport, staggerContainer } from '../../../lib/motion'
 
 function PhoneCard({ title, children }) {
@@ -48,9 +50,14 @@ function Time({ children }) {
 
 export default function CoreWhatsApp() {
   return (
-    <section className="bg-ew-pattern px-6 py-24">
+    <section className="relative overflow-hidden px-6 py-24">
+      <PhotoBackdrop
+        src={coreWhatsAppBackdrop}
+        className="absolute inset-0"
+        overlayClassName="bg-brand/80"
+      />
       <m.div
-        className="mx-auto flex max-w-6xl flex-col gap-11"
+        className="relative mx-auto flex max-w-6xl flex-col gap-11"
         initial="hidden"
         whileInView="visible"
         viewport={revealViewport}

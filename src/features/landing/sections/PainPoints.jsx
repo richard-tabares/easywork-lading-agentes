@@ -1,5 +1,7 @@
 import { m } from 'motion/react'
 import { X } from 'lucide-react'
+import painPointsBackdrop from '../../../assets/backdrops/pain-points-paperwork.webp'
+import PhotoBackdrop from '../../../components/ui/PhotoBackdrop'
 import { fadeUp, revealViewport, staggerContainer } from '../../../lib/motion'
 
 const pains = [
@@ -13,9 +15,14 @@ const pains = [
 
 export default function PainPoints() {
   return (
-    <section className="rounded-t-3xl border-t-8 border-ink bg-ew-pattern px-6 py-24">
+    <section className="relative overflow-hidden px-6 py-24">
+      <PhotoBackdrop
+        src={painPointsBackdrop}
+        className="absolute inset-0"
+        overlayClassName="bg-brand/80"
+      />
       <m.div
-        className="mx-auto flex max-w-6xl flex-col gap-12"
+        className="relative mx-auto flex max-w-6xl flex-col gap-12"
         initial="hidden"
         whileInView="visible"
         viewport={revealViewport}

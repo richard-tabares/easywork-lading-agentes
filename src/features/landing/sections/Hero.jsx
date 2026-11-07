@@ -1,6 +1,8 @@
 import { Check } from 'lucide-react'
 import icon from '../../../assets/icon.png'
+import heroBackdrop from '../../../assets/backdrops/hero-insurance-agent.webp'
 import ButtonLink from '../../../components/ui/ButtonLink'
+import PhotoBackdrop from '../../../components/ui/PhotoBackdrop'
 
 const fileFacts = [
   { label: 'Contratante', value: '[Nombre del cliente]' },
@@ -53,15 +55,13 @@ export default function Hero() {
       <div className="relative min-h-150 min-w-0 grow basis-full lg:basis-1/2">
         <div
           aria-hidden="true"
-          className="absolute -bottom-10 -top-10 left-0 right-0 rounded-l-full bg-ink"
-        />
-        <div
-          aria-hidden="true"
           className="absolute -bottom-10 -top-10 left-4 right-0 rounded-l-full bg-white"
         />
-        <div
-          aria-hidden="true"
-          className="absolute -bottom-10 -top-10 left-7.5 right-0 rounded-l-full bg-ew-pattern"
+        <PhotoBackdrop
+          src={heroBackdrop}
+          priority
+          className="absolute -bottom-10 -top-10 left-7.5 right-0 rounded-l-full"
+          overlayClassName="bg-linear-to-r from-brand/90 via-brand/80 to-brand/60"
         />
 
         <div className="relative flex h-full min-h-150 items-center justify-center px-6 py-12 lg:pl-24 lg:pr-8">
