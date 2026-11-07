@@ -7,21 +7,13 @@ export default function AuthLayout({ logoClassName, headline, bullets, children 
   return (
     <div className="flex min-h-screen flex-wrap bg-white font-sans text-ink">
       <div className="relative min-h-105 min-w-0 grow basis-full overflow-hidden lg:basis-1/2">
-        <div
-          aria-hidden="true"
-          className="absolute -bottom-15 -top-15 left-0 right-0 rounded-r-full bg-ink"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute -bottom-15 -top-15 left-0 right-4 rounded-r-full bg-white"
-        />
         <PhotoBackdrop
           src={authBackdrop}
-          className="absolute -bottom-15 -top-15 left-0 right-7.5 rounded-r-full"
+          className="absolute inset-0"
           overlayClassName="bg-linear-to-r from-brand/90 via-brand/80 to-brand/60"
         />
 
-        <div className="relative flex h-full flex-col justify-between gap-10 px-14 pb-12 pt-14 pr-30">
+        <div className="relative flex h-full flex-col justify-between gap-10 px-14 pb-12 pt-14">
           <span className="text-sm font-semibold tracking-widest text-lilac-300">ALL IN ONE</span>
 
           <div className="flex max-w-xl flex-col gap-7">
